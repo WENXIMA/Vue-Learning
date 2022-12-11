@@ -4,6 +4,7 @@
         <li>{{name}}</li>
         <li>{{email}}</li>
         <li>{{descripition}}</li>
+        <li>{{coachtype}}</li>
     </ul>
 
 
@@ -26,6 +27,9 @@ export default{
             descripition:{
                 type:String,
                 
+            },
+            coachtype:{
+                type:String
             },
         
     },

@@ -1,4 +1,5 @@
 <template>
+    <router-link to="/requestlist"><button>Request Form</button></router-link>
 <ul>
     <ul>
         <RequestData v-for="request in requestlist"
@@ -10,14 +11,12 @@
         :message="request.message"></RequestData>
     </ul>
 </ul>
-<RequestList />
 </template>
 
 <script>
-import RequestList from './RequestList.vue';
 import RequestData from './RequestData.vue';
 export default{
-components:{RequestList,RequestData},
+components:{RequestData},
 data() {
     return {
         requestlist:[],
