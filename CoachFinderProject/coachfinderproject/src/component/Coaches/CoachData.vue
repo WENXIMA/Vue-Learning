@@ -1,10 +1,11 @@
 <template>
     
     <ul>
-        <li>{{name}}</li>
+        <li><h3>{{name}}</h3></li>
         <li>{{email}}</li>
-        <li>{{descripition}}</li>
-        <li>{{coachtype}}</li>
+        <li>{{hourlyRate}}</li>
+        <li>{{description}}</li>
+        <li>{{areas}}</li>
     </ul>
 
 
@@ -14,24 +15,6 @@
 
 <script>
 export default{
-    props: {
-       
-            name:{
-                type:String,
-                
-            },
-            email:{
-                type:String,
-                
-            },
-            descripition:{
-                type:String,
-                
-            },
-            coachtype:{
-                type:String
-            },
-        
-    },
+    props: ['name','email','hourlyRate','description','areas']
 }
 </script>

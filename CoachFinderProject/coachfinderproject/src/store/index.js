@@ -1,20 +1,10 @@
-// import { createStore } from "vuex";
-
-// const store = createStore({
-//     state(){
-//         coachlist:[]
-//     },
-//     mutations:{
-//         increase(state,payload){
-//             state.counter = 
-//         }
-//     },
-//     getters:{
-//         getCoaches(state){
-//             return state.coachlist;
-//         },
-//     }
+import { createStore } from "vuex";
+import coachesModule from './modules/coaches/index.js';
+const store = createStore({
+    modules:{
+        coachlist:coachesModule
+    },
     
 
-// });
-// export default store;
+});
+export default store;
