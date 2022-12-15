@@ -25,14 +25,12 @@ Version 1.0
 ```
 ## Features will updated later on:
 ```
-    - Adding Style to all pages.
-    - The Coach register request will send to verification page after they sending coach application.
+    
     -Once the Application is approved, then it will appear to the main page.
-    -Assign coach to serval types such as backend, front end and full stack.
-    -In Coach Home Page, user will able to find speific coach by filter section.
-    -Adding content to Home Page.
-    -Update the functionality to Vuex.
     -Adding backend to allow user to store the coach and request information
+    -Adding authentication to allow user log in as client or admin
+      -In this functionality, admin will able to approve coach register request.
+      -client will be able to visit pages and register as coach.
 ```
 ## Project setup
 ```
