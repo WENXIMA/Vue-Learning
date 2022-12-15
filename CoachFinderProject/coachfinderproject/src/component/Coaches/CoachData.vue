@@ -9,7 +9,7 @@
         <li class="card-text">{{areas}}</li>
     </ul>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+      <router-link :to="coachDetailsLink">View Details</router-link>
   </div>
 </div>
 
@@ -21,7 +21,15 @@
 
 <script>
 export default{
-    props: ['name','email','hourlyRate','description','areas']
+    props: ['name','email','hourlyRate','description','areas','id'],
+    computed: {
+    fullName() {
+      return this.firstName + ' ' + this.lastName;
+    },
+    coachDetailsLink() {
+      return this.$route.path + '/' + this.id; // /coaches/c1
+    },
+  },
 }
 </script>
 

@@ -7,6 +7,11 @@ const store = createStore({
         coachlist:coachesModule,
         requestlist:requestModule,
     },
+    state(){
+        return{
+            userId:'c3'
+        }
+    }
     
 
 });

@@ -1,14 +1,9 @@
 
 <template>
-  <!-- <div class="form-group row"> 
-   <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-   <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-   </div>
-</div> -->
   <div class="card d-flex justify-content-center">
     <div class="card-body align-self-center">
     <form @submit.prevent="submitForm">
+      <p v-if="!Validation" class="error">Please check your input and try again later!</p>
       <div class="card-body align-self-center">
         <label for="name">Name</label>
         <input type="text" id="name" v-model.trim="name" />
@@ -64,10 +59,12 @@
       };
     },
     methods: {
-        ValidateForm() {
-            
-        },
+        
       submitForm() {
+        if(this.name==='' || this.email===''||this.description===''||this.areas===''||this.hourlyRate===''){
+          this.Validation=false;
+          return;
+        }
         const formData = {
             name: this.name,
             email: this.email,
@@ -98,6 +95,9 @@ input,textarea{
 .btns{
   text-align: center;
 
+}
+.error{
+  color:red
 }
 </style>
   

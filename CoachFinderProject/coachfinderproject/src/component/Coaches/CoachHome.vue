@@ -1,16 +1,24 @@
 <template>
+    <base-dialog :show="!!error" title="Error Occurred" @close="ErrorClose"> 
+    <!-- convert a string to boolean  -->
+        <p>{{ error }}</p>
+    </base-dialog>
     <div class="d-flex justify-content-center">
         <div class="align-self-center">
             <h2>Coach Page</h2>
         </div>
     </div>
 
-
     <div class="d-flex justify-content-start">
         <div class="align-self-center">
             <CoachFilter @change-filter="setFilters"></CoachFilter>
         </div>
     </div>
+
+    <div v-if="isloading">
+        <base-spinner></base-spinner>
+    </div>
+
     <div class="card d-flex justify-content-center">
         <div class="card-body align-self-center ">
             <ul v-if="hasCoaches">
@@ -19,9 +27,9 @@
                     :description="coach.description">
                 </CoachData>
             </ul>
-
             <h2 v-else>No Coaches in the list</h2>
         </div>
+
     </div>
 
 </template>
@@ -32,6 +40,9 @@ import CoachFilter from './CoachFilter.vue';
 export default {
     components: { CoachData, CoachFilter },
     computed: {
+        isCoach() {
+            return !this.isloading && this.$store.getters['coachlist/isCoach'];
+        },
         filterCoaches() {//getting coachlist from module in index.js and Second coachlist is getters methods
             const coaches = this.$store.getters['coachlist/coachlist'];
             return coaches.filter(coach => {
@@ -53,6 +64,8 @@ export default {
     },
     data() {
         return {
+            error: null,
+            isloading: false,
             activeFilters: {
                 FrontEnd: true,
                 BackEnd: true,
@@ -60,9 +73,25 @@ export default {
             }
         }
     },
+    created() {
+        this.loadCoaches();
+    },
     methods: {
         setFilters(updateFilters) {
             this.activeFilters = updateFilters;
+        },
+        async loadCoaches() {
+            this.isloading = true;
+            try {
+                await this.$store.dispatch('coachlist/loadCoaches');
+
+            } catch (error) {
+                this.error = error.message || 'Something goes wrong!';
+            }
+            this.isloading = false;
+        },
+        ErrorClose(){
+            this.error=null;
         }
     },
 

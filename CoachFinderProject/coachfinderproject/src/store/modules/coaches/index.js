@@ -8,7 +8,7 @@ export default{
         return {
             coachlist:[
                 {
-                    id:'1',
+                    id:'c1',
                     name:'Jason',
                     email:'wma050@uottawa.ca',
                     hourlyRate:30,
@@ -16,7 +16,7 @@ export default{
                     areas:"FullStack"
                 },
                 {
-                    id:'2',
+                    id:'c2',
                     name:'Jan',
                     email:'wma050@uottawa.ca',
                     hourlyRate:30,
@@ -24,7 +24,7 @@ export default{
                     areas:"FrontEnd"
                 },
                 {
-                    id:'3',
+                    id:'c3',
                     name:'Ca',
                     email:'wma050@uottawa.ca',
                     hourlyRate:30,

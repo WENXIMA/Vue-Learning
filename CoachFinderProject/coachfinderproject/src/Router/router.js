@@ -5,6 +5,8 @@ import RequestList from '../component/Request/RequestList.vue';
 import HomePage from '../component/Home/HomePage.vue';
 import ErrorPathName from '../component/ErrorMessage/ErrorPathName.vue';
 import CoachForm from '../component/Coaches/CoachForm.vue';
+import CoachDetail from '../component/Coaches/CoachDetail.vue';
+
 const router = createRouter({
     history:createWebHistory(),
     routes:[
@@ -15,7 +17,11 @@ const router = createRouter({
             path:'/coaches', components:{default: CoachHome,},
         },
         {
-            path:'/register', components:{default:CoachForm}
+            path:'/coaches/:id', components:{default: CoachDetail,},props:true,
+            
+        },
+        {
+            path:'/coachregister', components:{default:CoachForm}
         },
         {
             path:'/request', components:{default:RequestHome,}
