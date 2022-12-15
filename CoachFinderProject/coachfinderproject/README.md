@@ -14,6 +14,15 @@ Version 1.0
   -Implment functionality:
     - Allow user to send request and assign to coach 
 ```
+##Version 1.1
+```
+- Add style to all pages by bootstrap5.
+- Implment add new coach and send request functionality by using vueX.
+-In both features, using getters to get the list of coach and request
+  - mutations read and store the addCoach/Request function
+   - actions create a formatData to store this kind of data to coachlist/requestlist
+   -dispatch this method in CoachRegister.vue and RequestForm.vue components.
+```
 ## Features will updated later on:
 ```
     - Adding Style to all pages.
