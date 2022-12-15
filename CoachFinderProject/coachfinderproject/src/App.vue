@@ -17,3 +17,9 @@ export default{
   components:{NavigationBar,FooterBar}
 }
 </script>
+<style>
+body{
+  font-family: 'Unbounded', cursive;
+  background-color: #FCDDB0;
+}
+</style>

@@ -1,37 +1,43 @@
 <template>
+
     <h2>Find Coach</h2>
-    <input type="checkbox" id="FrontEnd" checked @change="setFilter"/>
-    <label for="FrontEnd">FrontEnd</label>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="FrontEnd" checked @change="setFilter">
+        <label class="form-check-label" for="flexSwitchCheckChecked">FrontEnd Instructor</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="BackEnd" checked @change="setFilter">
+        <label class="form-check-label" for="flexSwitchCheckChecked">BackEnd Instructor</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="FullStack" checked @change="setFilter">
+        <label class="form-check-label" for="flexSwitchCheckChecked">FullStack Instructor</label>
+    </div>
 
-    <input type="checkbox" id="BackEnd" checked @change="setFilter"/>
-    <label for="BackEnd">BackEnd</label>
-
-    <input type="checkbox" id="FullStack" checked @change="setFilter"/>
-    <label for="FullStack">FullStack</label>
 </template>
 
 <script>
-export default{
-    emits:['change-filter'],
-    data(){
+export default {
+    emits: ['change-filter'],
+    data() {
         return {
-            filters:{
-                FrontEnd:true,
-                BackEnd:true,
-                FullStack:true
+            filters: {
+                FrontEnd: true,
+                BackEnd: true,
+                FullStack: true
             }
         }
     },
-    methods:{
-        setFilter(event){
+    methods: {
+        setFilter(event) {
             const inputId = event.target.id;
             const isActive = event.target.checked;
-            const updateFilters ={
+            const updateFilters = {
                 ...this.filters,
-                [inputId]:isActive
+                [inputId]: isActive
             };
             this.filters = updateFilters;
-            this.$emit('change-filter',updateFilters)
+            this.$emit('change-filter', updateFilters)
         }
     }
 }

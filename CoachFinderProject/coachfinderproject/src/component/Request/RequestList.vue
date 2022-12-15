@@ -1,24 +1,24 @@
 <template>
-<form @submit.prevent="sendrequest">
-        <input type="email" ref="SenderEmail" placeholder="From"/>
-        <input type="email" ref="ReceiverEmail" placeholder="To"/>
-        <input type="text" ref="Title" placeholder="To"/>
-        <textarea type="text" ref="Content" placeholder="Type in here..." />
-        <button type="submit">Submit</button>
-    </form>
+    <section>
+        <h2>
+            Send a request now
+        </h2>
+        <RequestForm @save-request="saveRequest"/>
+    </section>
 </template>
 
 <script>
+import RequestForm from './RequestForm.vue';
+
 export default{
-    inject:['addRequest'],
-    methods:{
-        sendrequest(){
-            const sender = this.$refs.SenderEmail.value;
-            const receiver = this.$refs.ReceiverEmail.value;
-            const head = this.$refs.Title.value;
-            const content = this.$refs.Content.value;
-            this.addRequest(sender,receiver,head,content);
+    components:{
+        RequestForm
+    },
+    methods: {
+        saveRequest(data){
+            this.$store.dispatch('requestlist/addRequest', data); // dispatch the action method to add new request
+            this.$router.replace('/request'); //move back to request page
         }
-    }
+    },
 }
 </script>

@@ -1,11 +1,16 @@
 <template>
-    
+    <div class="card w-100 d-flex justify-content-center m-4" style="width: 18rem;">
+  <div class="card-body align-self-center ">
+    <h3 class="card-title">{{title}}</h3>
     <ul>
-        <li>{{from}}</li>
-        <li>{{to}}</li>
-        <li>{{title}}</li>
-        <li>{{message}}</li>
+        <li class="card-text">{{from}}</li>
+        <li class="card-text">{{to}}</li>
+        <li class="card-text">{{message}}</li>
     </ul>
+    
+  </div>
+</div>
+    
 
 
 
@@ -14,25 +19,13 @@
 
 <script>
 export default{
-    props: {
-       
-        from:{
-                type:String,
-                
-            },
-            to:{
-                type:String,
-                
-            },
-            title:{
-                type:String,
-                
-            },
-            message:{
-                type:String,
-                
-            },
-        
-    },
+    props:['from','to','title','message']
 }
 </script>
+
+<style scoped>
+.card{
+    background-color: transparent;
+    
+}
+</style>
