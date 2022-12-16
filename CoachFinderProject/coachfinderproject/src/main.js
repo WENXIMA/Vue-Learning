@@ -5,6 +5,7 @@ import store from './store/index.js';
 import BaseSpinner from './UI/BaseSpinner.vue';
 import BaseDialog from './UI/BaseDialog.vue';
 
+
 const app = createApp(App);
 
 app.use(router);

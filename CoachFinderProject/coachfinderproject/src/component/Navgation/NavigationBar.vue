@@ -26,6 +26,9 @@
                     
                     <router-link to="/register" class="nav-link">Join Us</router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link to="/login" class="nav-link">LogIn/SignUp</router-link>
+                </li>
 
             </ul>
         </div>

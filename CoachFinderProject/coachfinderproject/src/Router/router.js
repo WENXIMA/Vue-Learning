@@ -6,10 +6,12 @@ import HomePage from '../component/Home/HomePage.vue';
 import ErrorPathName from '../component/ErrorMessage/ErrorPathName.vue';
 import CoachForm from '../component/Coaches/CoachForm.vue';
 import CoachDetail from '../component/Coaches/CoachDetail.vue';
-
+import UserLogIn from '../component/UserLogIn/UserLogIn.vue';
+import UserRegister from '../component/UserRegister/UserRegister.vue';
 const router = createRouter({
     history:createWebHistory(),
     routes:[
+        
         {
             path:'/', components:{default:HomePage}
         },
@@ -29,7 +31,13 @@ const router = createRouter({
         {
             path:'/requestlist', components:{default:RequestList,}
         },
-        {path:'/:notFound(.*)',component:ErrorPathName}
+        {path:'/:notFound(.*)',component:{default:ErrorPathName}},
+        {
+            path:'/login', components:{default:UserLogIn}
+        },
+        {
+            path:'/userregister', components:{default:UserRegister}
+        },
     ]
 });
 
