@@ -23,14 +23,27 @@ Version 1.0
    - actions create a formatData to store this kind of data to coachlist/requestlist
    -dispatch this method in CoachRegister.vue and RequestForm.vue components.
 ```
+##Version1.2
+```
+--allow to store the coach data to firebase realtime database.
+```
+
+##Version 1.3
+```
+-Add auth method to this project including login and register page.
+-serve side based on firebase application,
+  - reference the sign up and log in Firebase Auth API with email and password
+ 
+```
 ## Features will updated later on:
 ```
     
     -Once the Application is approved, then it will appear to the main page.
-    -Adding backend to allow user to store the coach and request information
     -Adding authentication to allow user log in as client or admin
       -In this functionality, admin will able to approve coach register request.
       -client will be able to visit pages and register as coach.
+    -Adding more style to log in, register and user home page.
+    
 ```
 ## Project setup
 ```
