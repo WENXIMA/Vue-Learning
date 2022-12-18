@@ -1,22 +1,21 @@
 <template>
 
     <section>
-        <div class="card">
+        <div class="card d-flex justify-content-center">
+            <div class="card-body align-self-center">
             <h2>{{ name }}</h2>
-            <h2>{{ email }}</h2>
+            <h4>{{ email }}</h4>
             <h3>${{ hourlyRate }}/hour</h3>
+            <p>Areas: {{areas}}</p>
+            <p>Description: {{description}}</p>
+            </div>
+            
         </div>
     </section>
     <section>
         <div class="card">
-            <h2>Reach coach now</h2>
-            <button class="btn btn-outline-primary">Contact</button>
+            
         </div>
-    </section>
-    <section>
-        <p>{{areas}}</p>
-            <p>{{description}}</p>
-        
     </section>
 </template>
 
@@ -54,3 +53,12 @@ export default{
     },
 }
 </script>
+
+<style scoped>
+.card{
+    background-color: transparent;
+}
+.btn{
+    color:black
+}
+</style>

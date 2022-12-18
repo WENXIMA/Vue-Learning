@@ -8,6 +8,9 @@ import CoachForm from '../component/Coaches/CoachForm.vue';
 import CoachDetail from '../component/Coaches/CoachDetail.vue';
 import UserLogIn from '../component/UserLogIn/UserLogIn.vue';
 import UserRegister from '../component/UserRegister/UserRegister.vue';
+import UserPage from '../component/UserPage/UserPage.vue';
+import auth from "@/store/modules/auth";
+
 const router = createRouter({
     history:createWebHistory(),
     routes:[
@@ -29,7 +32,7 @@ const router = createRouter({
             path:'/request', components:{default:RequestHome,}
         },
         {
-            path:'/requestlist', components:{default:RequestList,}
+            path:'/requestlist', components:{default:RequestList,}, 
         },
         {path:'/:notFound(.*)',component:{default:ErrorPathName}},
         {
@@ -38,7 +41,22 @@ const router = createRouter({
         {
             path:'/userregister', components:{default:UserRegister}
         },
+        {
+            path:'/userpage', components:{default:UserPage}
+        },
     ]
 });
+
+router.beforeEach((to,from,next) => {
+    if(to.path==='/login' && auth.currentUser){
+        next('/userpage')
+        return
+    }
+    if(to.matched.some(record => record.meta.requireAuth) && !auth.currnetUser){
+        next('/login')
+        return
+    }
+    next();
+})
 
 export default router;

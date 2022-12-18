@@ -17,7 +17,7 @@
       <label for="message">message:</label>
       <textarea  id="message" v-model.trim="message" placeholder="Type in here ...."/>
     </div>
-    <button class="btn btn-warn w-100" type="submit" >Send</button>
+    <button class="btn btn-outline-warning w-100" type="submit" >Send</button>
   </form>
 </template>
 
@@ -59,18 +59,40 @@ export default {
 
 <style scoped>
 .card{
-
-  background-color: transparent;
+background-color: transparent;
 }
-input,textarea{
-  background-color: transparent;
+form {
+ margin: 1rem;
+ padding: 1rem;
+}
+
+label {
+ font-weight: bold;
+ margin-bottom: 0.5rem;
+ display: block;
+}
+
+input,
+textarea {
+ background-color: transparent;
+ border-color:black;
+ display: block;
+ width: 100%;
+ font: inherit;
+ border: 1px solid #ccc;
+ padding: 0.15rem;
+}
+
+input:focus,
+textarea:focus {
+ border-color: black;
+ background-color: #E5BA73;
+ outline: none;
+}
+.error{
+color:red
 }
 .btn{
-  width: 50%;
-  background-color:rgba(201, 125, 12, 0.459)
-}
-
-.error{
-  color:red;
+color:black
 }
 </style>

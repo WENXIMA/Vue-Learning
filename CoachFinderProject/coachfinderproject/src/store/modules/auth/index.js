@@ -1,16 +1,10 @@
 import mutations from './mutations.js';
-import getters from './getters.js';
 import actions from './actions.js';
 
 export default{
-    state() {
-        return {
-            userId:null,
-            token:null,
-            toeknExpiration:null,
-        }
+    state:{
+        user:null
     },
-    getters,
     mutations,
     actions
 }

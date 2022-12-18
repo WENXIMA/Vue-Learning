@@ -11,7 +11,8 @@
     </ul>
     <h2 v-else>No Request at current time</h2>
     <div class="routers">
-        <router-link to="/requestlist"><button class="btn btn-outline-warning">Request Form</button></router-link>
+        <p>Become to a member and book an appointment with our coach!</p>
+        <router-link to="/login"><button class="btn btn-outline-warning">Request Form</button></router-link>
 
     </div>
 

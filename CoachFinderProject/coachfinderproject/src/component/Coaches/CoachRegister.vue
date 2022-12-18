@@ -78,26 +78,47 @@
     }
   };
   </script>
-
-  <style scoped>
-.card{
+   <style scoped>
+   .card{
   background-color: transparent;
 }
-input,textarea{
-  background-color: transparent;
-  text-align: center;
-
-}
-.btn{
-  color:black;
-
-}
-.btns{
-  text-align: center;
-
-}
-.error{
+  form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .form-control {
+    margin: 0.5rem 0;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  input,
+  textarea {
+    background-color: transparent;
+    border-color:black;
+    display: block;
+    width: 100%;
+    font: inherit;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: black;
+    background-color: #E5BA73;
+    outline: none;
+  }
+  .error{
   color:red
 }
-</style>
+.btn{
+  color:black
+}
+  </style>
   

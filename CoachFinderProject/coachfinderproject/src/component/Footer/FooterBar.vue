@@ -24,6 +24,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 50px;
   }
   
   </style>

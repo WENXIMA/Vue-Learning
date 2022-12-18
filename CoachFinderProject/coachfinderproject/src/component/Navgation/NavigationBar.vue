@@ -5,6 +5,7 @@
             
 
             <h3 class="navbar-brand d-none d-lg-inline-block">Navigation</h3>
+            
             <div class="w-100 text-right">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -23,10 +24,6 @@
                     <router-link to="/request" class="nav-link">Request</router-link>
                 </li>
                 <li class="nav-item">
-                    
-                    <router-link to="/register" class="nav-link">Join Us</router-link>
-                </li>
-                <li class="nav-item">
                     <router-link to="/login" class="nav-link">LogIn/SignUp</router-link>
                 </li>
 
@@ -35,13 +32,27 @@
     </nav>
 </template>
 
+<script>
+
+export default{
+    
+}
+</script>
+
 <style scoped>
 .navbar{
-    background-color: #F2DEBA;
+    background-color: #C58940;
     font-weight: bolder;
 }
 .nav-item:hover{
     background-color: #FFEFD6;
-    
+}
+.nav-link{
+    color:#FCF9BE
+
+}
+.nav-link:hover{
+    color:black
+
 }
 </style>
