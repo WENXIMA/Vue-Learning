@@ -35,14 +35,16 @@ Version 1.0
   - reference the sign up and log in Firebase Auth API with email and password
  
 ```
-## Features will updated later on:
+##Version 1.4
 ```
-    
-    -Once the Application is approved, then it will appear to the main page.
-    -Adding authentication to allow user log in as client or admin
-      -In this functionality, admin will able to approve coach register request.
-      -client will be able to visit pages and register as coach.
-    -Adding more style to log in, register and user home page.
+-Upgrade log in, register and user home page
+- Allow user to register as coach and send request after they logged in
+-deploy serve in netfliy
+-Upgrading UI Styling
+-Usability to moblie version.
+
+```
+###Deploy website:  https://inspiring-croissant-ce422c.netlify.app/
     
 ```
 ## Project setup
